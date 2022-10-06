@@ -1456,3 +1456,25 @@ let data = [
       renderData(element);
     }
   }
+
+  function renderData(data) {
+    let wrapper = document.getElementById("wrapper-element");
+    wrapper.innerHTML = "";
+  
+    data.forEach((item) => {
+      let element = `
+          <div class="card">
+              <h3>${item.nama_lengkap}</h3>
+              <p>Nama Panggilan : ${item.nama_panggilan} </p>
+              <p>Nomor Telepon : ${item.nomor_telepon} </p>
+              <p>id Line : ${item.id_line} </p>
+              <p>Tanggal Lahir : ${item.tanggal_lahir} </p>
+              <p>NIM : ${item.nim} </p>
+              <p>Email : ${item.email} </p>
+              <p>Hobi : ${item.hobi} </p>
+          </div>
+          `;
+  
+      wrapper.insertAdjacentHTML("beforeend", element);
+    });
+  }
